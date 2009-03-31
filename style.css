@@ -12,3 +12,19 @@ body{
 	color: #4F8A10;
 	background-color: #DFF2BF;
 }
+
+.srcLink {
+	font-style: italic;
+}
+
+.srcLink a {
+	color: #CCFFCC;
+	text-decoration: none;
+	border-bottom: thin dashed;
+}
+
+.srcLink a:hover{
+	color: #99CC99;
+	text-decoration: none;
+	border-bottom: thin solid;
+}

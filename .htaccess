@@ -1,0 +1,3 @@
+RewriteEngine on
+RewriteBase /oscar/
+RewriteRule ^([A-Za-z0-9\-]*)Scraper.js$ javascript.php?outputModule=$1 [QSA,L]

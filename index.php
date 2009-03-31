@@ -9,9 +9,9 @@
 		<link rel="stylesheet" href="style.css" />
 		<script>
 			function jsUrl(om) {
-				return "javascript:(function(){var sc=document.createElement('script');sc.src='http://<?= $_SERVER['HTTP_HOST']?>/oscar/javascript.php?outputModule="
+				return "javascript:(function(){var sc=document.createElement('script');sc.src='http://<?= $_SERVER['HTTP_HOST']?>/oscar/"
 				+ om
-				+ "';document.body.appendChild(sc);})();";
+				+ "Scraper.js';document.body.appendChild(sc);})();";
 			}
 			function updateOM(node) {
 				if (node.value == '') {

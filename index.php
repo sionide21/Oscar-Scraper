@@ -1,3 +1,8 @@
+<?php
+	error_reporting(E_ALL);
+	$outputModules = scandir('./outputModules/');
+	$mask = '/^([A-Za-z0-9\-]*)Output.js/';
+?>
 <html>
 	<head>
 		<title>Oscar Data Collection</title>
@@ -22,7 +27,14 @@
 		<form action="#">
 			<select name="outputModule" onChange="updateOM(this)" id="changebar">
 				<option value="">---Select an Output Format---</option>
-				<option value="JSON">JSON</option>
+				<?php
+					foreach ($outputModules as $module) {
+						if (preg_match($mask, $module, $matches)) {
+							print_r($matches);
+							echo '<option value="' . $matches[1] . '">' . $matches[1] . '</option>';
+						}
+					}
+				?>
 			</select>
 		</form>
 		<div id="urlBar">Select an output format to get a url.</div>

@@ -1,31 +1,11 @@
-/**
- * Output data in JSON format.
- */
- function JSONOutput() {
  
-	/**
-	 * Make it an array.
-	 */
-	this.beforeData = function() {
-		return "[";
-	};
-	
-	/**
-	 * This is called for each record parsed. return the appropriate text
-	 * for a record of the format you are implementing. Last is a boolean determining whether
-	 * more records follow. 
-	 */
-	this.formatRecord = function(record, last) {
-		return Ext.util.JSON.encode(record) + (last ? '' : ',');
-	};
-	
-	/**
-	 * Make it an array.
-	 */
-	 this.afterData = function() {
-		return "]";
-	 };
- }
+/*
+ * Ext JS Library 2.2
+ * Copyright(c) 2006-2008, Ext JS, LLC.
+ * licensing@extjs.com
+ * 
+ * http://extjs.com/license
+ */
  
 var Ext = {};
 Ext.util = {};
@@ -156,9 +136,51 @@ Ext.util.JSON = new (function(){
     };
 })();
 
+/*
+ *  Copyright 2009 Ben Olive
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
 
+/**
+ * Output data in JSON format.
+ */
+ function JSONOutput() {
  
- 
+	/**
+	 * Make it an array.
+	 */
+	this.beforeData = function() {
+		return "[";
+	};
+	
+	/**
+	 * This is called for each record parsed. return the appropriate text
+	 * for a record of the format you are implementing. Last is a boolean determining whether
+	 * more records follow. 
+	 */
+	this.formatRecord = function(record, last) {
+		return Ext.util.JSON.encode(record) + (last ? '' : ',');
+	};
+	
+	/**
+	 * Make it an array.
+	 */
+	 this.afterData = function() {
+		return "]";
+	 };
+ }
+
  // This is how you register the output module you are using. 
  // NOTE: only declare one Output module.
  var outputModule = new JSONOutput();

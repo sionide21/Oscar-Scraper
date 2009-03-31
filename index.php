@@ -30,11 +30,16 @@
 				+ om
 				+ "Scraper.js';document.body.appendChild(sc);})();";
 			}
+			function jsSrcUrl(om) {
+				return '<a href="outputModules/' + om + 'Output.js">View Output Module Source</a>';
+			}
 			function updateOM(node) {
 				if (node.value == '') {
 					document.getElementById('urlBar').innerHTML = "Select an output format to get a url."
+					document.getElementById('outputModule').innerHTML = "";
 				} else {
 					document.getElementById('urlBar').innerHTML = jsUrl(node.value);
+					document.getElementById('outputModule').innerHTML = jsSrcUrl(node.value);
 				}
 			}
 		</script>
@@ -55,7 +60,7 @@
 		</form>
 		<div id="urlBar">Select an output format to get a url.</div>
 		<span class="srcLink" id="scraper"><a href="OscarCrawler.js">View Scraper Source</a></span><br />
-		<span class="srcLink" id="outputModule"><a href="outputModules/JSONOutput.js">View Output Module Source</a></span><br />
+		<span class="srcLink" id="outputModule"></span><br />
 		<span class="srcLink" id="template"><a href="Output.js">Output Module Template</a></span><br />
 	</body>
 </html>

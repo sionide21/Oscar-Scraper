@@ -59,11 +59,11 @@ oscarCrawler = new (function() {
 				curr = getRecord(classes[x]);
 				// loop instead of if incase there are more that two meeting times
 				//(I have never seen this before but just in case)
-				while (x+1 < classes.length && isPrevious(classes[x+1])) {
+				while (x+1 < classes.length && isClass(classes[x+1]) && isPrevious(classes[x+1])) {
 					addTime(curr, classes[x+1]);
 					x++;
 				}
-				var isLast = (x+1 == classes.length || (x+2 == classes.length && isPrevious(classes[x+1])));
+				var isLast = (x+1 == classes.length || (x+2 == classes.length && isClass(classes[x+1]) && isPrevious(classes[x+1])));
 				records += outputModule.formatRecord(curr, isLast);
 			}
 		}
